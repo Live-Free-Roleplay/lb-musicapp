@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Custom App Template</title>
+    <title>LinkPlay Music</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="colors.css" />
 
@@ -66,11 +66,11 @@
         <div class="app" id="content">
             <div class="app-wrapper">
                 <div class="header">
-                    <div class="title">YouTube Music</div>
+                    <div class="title">LinkPlay Music</div>
                     <div class="subtitle">Your favorite music on the go!</div>
                 </div>
                 <div class="button-wrapper">
-                    <input id="youtubeUrl" type="text" placeholder="YouTube URL" />
+                    <input id="youtubeUrl" type="text" placeholder="Enter URL" />
                     <button id="playButton" class="button"><ion-icon name="play-outline"></ion-icon>Play</button>
                     <div class="music-controls">
                         <div class="volume-controls">
@@ -132,9 +132,9 @@
                 isPlaying = false;
                 fetchNui('stopSound');
             } else {
-                if (youtubeUrl.length === 0 || youtubeUrl === '') { return sendNotification({ title: "Please enter a YouTube URL!" }) }
+                if (youtubeUrl.length === 0 || youtubeUrl === '') { return sendNotification({ title: "Enter a valid URL!" }) }
 
-                if (!youtubeUrl.match(/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/)) { return sendNotification({ title: "Please enter a valid YouTube URL!" }) }
+                if (!youtubeUrl.match(/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/)) { return sendNotification({ title: "Please enter a valid URL!" }) }
 
                 playButton.html('<ion-icon name="stop-outline"></ion-icon>Stop');
                 isPlaying = true;
